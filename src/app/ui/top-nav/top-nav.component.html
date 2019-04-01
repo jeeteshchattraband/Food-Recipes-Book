@@ -1,0 +1,48 @@
+<div class="container">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary rcorners box-shadow">
+  <a class="navbar-brand" >
+    <img src="assets/images/logo.png" width="35px" alt="FoodBookLogo"/> FoodBook
+  </a>
+
+  <!-- Menu mobilne  -->
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" routerLink=""> <i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" routerLink="search"><i class="fas fa-search"></i> Search </a>
+      <a class="nav-item nav-link" routerLink="about"><i class="fas fa-address-card"></i> About project </a>
+
+      <a class="nav-item nav-link desktop-hide" *ngIf="!isLogin" routerLink="login"><i class="fas fa-sign-in-alt"></i> Sign in </a>
+      <!-- <a class="nav-item nav-link desktop-hide" *ngIf="!isLogin" routerLink="register"><i class="fas fa-user-plus"></i> Sign Up </a> -->
+      <a class="nav-item nav-link desktop-hide my-2 my-sm-0 margin desktop-hide logout" *ngIf="isLogin" (click)="onClickLogout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      <a class="nav-item nav-link desktop-hide" *ngIf="isLogin"  routerLink="favourites"><i class="fas fa-heart"></i> Favourites</a>
+      <a class="nav-item nav-link desktop-hide" *ngIf="isLogin"  routerLink="statistics"><i class="fas fa-chart-pie"></i> Statistics</a>
+      <div class="dropdown desktop-hide">
+       <a class="my-2 my-sm-0 margin desktop-hide"><img src="{{userPhoto}}" *ngIf="isLogin" class="rounded-circle desktop-hide userphoto"></a>
+       <span class="badge pill badge-secondary nav-item nav-link desktop-hide" *ngIf="isLogin">{{username}}</span>
+      </div> <p></p>
+      </div>
+    </div>
+
+  <!-- Menu desktopowe  -->
+  <div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+    <button class="btn btn-outline-light my-2 my-sm-0 margin mobile-hide" *ngIf="!isLogin" type="submit" routerLink="login"><i class="fas fa-sign-in-alt"></i> Sign in </button>
+    <!-- <button class="btn btn-outline-success my-2 my-sm-0 margin mobile-hide" *ngIf="!isLogin" type="submit" routerLink="register"><i class="fas fa-user-plus"></i> Sign up </button> -->
+    <div class="dropdown mobile-hide rcorners">
+     <a class="my-2 my-sm-0 margin mobile-hide"><img src="{{userPhoto}}" *ngIf="isLogin" class="rounded-circle mobile-hide"></a>
+     <span class="badge pill badge-secondary nav-item nav-link mobile-hide" *ngIf="isLogin">{{username}}</span>
+
+      <div class="dropdown-content mobile-hide rcorners">
+        <a href="#" *ngIf="isLogin" routerLink="favourites"><i class="fas fa-heart"></i> Favourites</a>
+        <a href="#" *ngIf="isLogin" routerLink="statistics"><i class="fas fa-chart-pie"></i> Statistics</a>
+        <a href="#" class="nav-item nav-link desktop-hide my-2 my-sm-0 margin mobile-hide" *ngIf="isLogin" (click)="onClickLogout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </div>
+    </div>
+  </div>
+
+</nav>
+</div>
+

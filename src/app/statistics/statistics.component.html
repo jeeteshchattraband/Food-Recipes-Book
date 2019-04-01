@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="https://naver.github.io/billboard.js/release/latest/dist/billboard.min.css">
+<div class="container">
+
+    <div class="box-shadow color-dark rcornersUpper"> <h1>Your favourite recipes calories graph</h1> </div>
+
+    <div class="box-shadow color-light rcornersLower">
+      <h3>Would you like to check which recipe contains most calories? <br><br>
+        Click button below to generate chart.</h3> <p></p>
+        <button class="btn-primary btn-labeled" (click)="showGraph()" *ngIf="buttonVisible">Generate Chart</button>
+
+        <div *ngIf="graph">
+          <angular-billboard *ngFor="let chart of charts"  [chart]="chart">
+          </angular-billboard>
+        </div>
+
+
+    </div>
+
+
+
+</div>

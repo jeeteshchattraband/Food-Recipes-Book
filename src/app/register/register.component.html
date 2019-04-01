@@ -1,0 +1,18 @@
+<div class="modal-dialog text-center">
+    <div class="col-sm-8 main-section">
+      <div class="modal-content color-light home rcorners">
+        <div class="col-12 center user-img">
+            <img src="assets/images/spoon.png">
+        </div>
+        <form class="col-12" (submit)="onSubmitAddUser()">
+          <div class="form-group">
+            <input type="email" name="email" id="email" [(ngModel)]="email" class="form-control" placeholder="Enter your email">
+          </div>
+          <div class="form-group">
+            <input type="password" name="password" id="password" [(ngModel)]="password" class="form-control" placeholder="Enter your password">
+          </div>
+              <button type="submit" class="btn register"><i class="fas fa-user-plus"></i> Sign up</button>
+        </form>
+      </div>
+    </div>
+  </div>

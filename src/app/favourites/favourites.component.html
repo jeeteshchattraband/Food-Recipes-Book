@@ -1,0 +1,16 @@
+<div class="container gap">
+  <div class="box-shadow color-dark rcorners"> <h1 style="text-align: center; padding-bottom: 0.25em;">Your favourite recipes</h1> </div>
+</div>
+
+<div class="container gap">
+
+      <div class="row box-shadow rcorners color-light marginLR" *ngFor="let item of favourites | async" >
+          <div class="col-sm center align"> <img src="{{ item.photoUrl }}" width="100px" height="100px">  </div>
+          <div class="col-6-sm center text-respo align center-text">  <h3 class="title-size">{{ item.name }}</h3>
+          <a href='{{ item.url }}' target="_blank" style="color: white">Click for more information</a> </div>
+          <div class="col-sm center"> </div><button type="button" class="btn btn-labeled btn-danger center btn-right" (click)="deleteItem(item.$key)">
+          <i class="glyphicon glyphicon-remove" (click)="deleteItem(item.$key)"></i></button>
+      </div>
+</div>
+<input type="submit" class="btn2 btn btn-labeled btn-danger" value="DELETE ALL" (click)="deleteItems()">
+

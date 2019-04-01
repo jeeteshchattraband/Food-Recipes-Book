@@ -1,0 +1,80 @@
+<!-- Kontener zawierający  -->
+<div class="container ">
+  <div class="color-dark title1 box-shadow">
+    <p style="text-align: center; font-weight: bold;" class="txt">Add products to your fridge</p>
+  </div>
+
+  <div class="color-dark title2 box-shadow">
+    <p style="text-align: center; font-weight: bold;" class="txt">Your products list ({{ itemCount }})</p>
+  </div>
+
+  <div class="gap"><p></p></div>
+
+  <div class="color-light col content1 box-shadow">
+    <p style="text-align: center; font-weight: 500;">Use this form below to add new products to your fridge. We will find matching recipes for you. </p>
+    <form (submit)="addItem()" >
+      <input type="text" class="txt" name="item" align="center" placeholder="Type any product .." [(ngModel)]="productText">
+      <br>
+    </form>
+    <div class="column2 ">
+      <div>
+        <input type="submit" style="font-weight: bold;" class="btn" value="Add product" (click)="addItem()">
+      </div>
+      <div>
+        <input type="submit" style="font-weight: bold;" class="btn" value="Search recipes" (click)="searchRecipes()">
+      </div>
+    </div>
+  </div>
+
+  <div class="color-light col content2 box-shadow">
+
+      <div class="fill" *ngIf="!isProduct">
+        <p>Time to fill up your fridge.</p>
+      </div>
+
+      <div class="" *ngIf="isProduct" [@products]="productTab.length">
+        <p class="life-container box-shadow" *ngFor="let product of productTab; let i = index" (click)="removeItem(i)"> {{ product }}</p>
+      </div>
+  </div>
+</div>
+
+<div class="gap2"><p></p></div>
+
+<div class="recipe"><!-- writting down results from API -->
+  <div class="color-light box-shadow rcorners" *ngFor="let result of data?.hits" >
+    <div class="header">
+      <p class="recipetitle">{{result.recipe.label}}</p>
+      <img src= "{{result.recipe.image}}" class="responsive">
+      <br><br>
+      <p class="ing">Ingredients: </p>
+      <span *ngFor="let ingredient of result.recipe.ingredientLines">
+        <li class="table">
+          {{ingredient}}
+        </li>
+      </span>
+      <br>
+      <p>Calories: {{result.recipe.calories | number:'1.0-0'}}</p>
+      <br>
+    </div>
+    <div style="text-align: center">
+        <div *ngIf="isLoggedIn" >
+          <button class="btn" (click)="createFavourite(result.recipe.label, result.recipe.image, result.recipe.url, result.recipe.calories)"
+            onClick="this.disabled=true;"> <!-- this.value='Added to favourites'; -->
+            <i class="fas fa-heart"> Add to Favourites</i>
+          </button>
+        </div>
+
+        <div *ngIf="!isLoggedIn" >
+            <a routerLink="../login" style="padding-left: 0.4em; padding-right: 0.4em">
+                Would you like to save this recipe in your favorites? <br>
+                Just sign in.
+            </a>
+        </div>
+
+        <br><br>
+
+        <a class="a moreInformation" href='{{result.recipe.url}}'>Click for more information</a>
+    <div>
+
+  </div>
+</div>

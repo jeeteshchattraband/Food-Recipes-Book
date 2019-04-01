@@ -1,0 +1,83 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.container {
+  max-width: 100%;
+  padding-top: 10px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.center-text {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.marginLR{
+  max-width: 100%;
+  margin-left: 0.17%;
+}
+
+.gap{
+  display:grid;
+  grid-gap: 10px;
+}
+
+img {
+    border-radius: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+.btn-right {
+  border-radius: 0px 15px 15px 0px;
+  height: 120px;
+}
+
+
+@media screen and (max-width: 600px) {
+
+  .btn{
+    width: 100px;
+  }
+
+  .btn-right {
+    border-radius: 5px;
+    height: 100%;
+  }
+
+  img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .center {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .row{
+    display: grid;
+    padding-bottom: 0.8em;
+  }
+
+  .text-respo {
+    font-size: 100%;
+    max-width: 70%;
+    padding-bottom: 0.4em;
+  }
+
+}
+
+@media screen and (max-width: 800px) {
+  .title-size {
+    font-size: 90%;
+  }
+}
+

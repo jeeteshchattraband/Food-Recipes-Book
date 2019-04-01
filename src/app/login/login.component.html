@@ -1,0 +1,33 @@
+<div class="modal-dialog text-center">
+  <div class="col-sm-8 main-section">
+    <div class="modal-content color-light home rcorners">
+      <div class="col-12 center user-img">
+          <img src="assets/images/fork.png">
+      </div>
+      <form class="col-12" (submit)="onSubmitLogin()">
+        <div class="form-group">
+          <input type="email" name="email" id="email" [(ngModel)]="email" class="form-control" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+          <input type="password" name="password" id="password" [(ngModel)]="password" class="form-control" placeholder="Enter your password">
+        </div>
+            <button type="submit" class="btn login"><i class="fas fa-sign-in-alt"></i> Sign in</button>
+      </form>
+      <div class="card-body">
+          <button class="btn btn-facebook" (click)="onClickFacebookLogin()">
+            <i class="fab fa-facebook-f"></i>
+          </button>
+          <button class="btn btn-google" (click)="onClickGoogleLogin()">
+            <i class="fab fa-google-plus-g"></i>
+          </button>
+          <button class="btn btn-twitter" (click)="onClickTwitterLogin()">
+            <i class="fab fa-twitter"></i>
+          </button>
+        </div>
+      <div class="col-12 acc">
+        <p>Don't have an account?</p>
+        <a routerLink="../register"><b>Sign up here</b></a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+.container {
+  max-width: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
+  font-size: 20px;
+}
+
+.text {
+  padding: 1em;
+  text-align: center;
+}
+
+h1{
+  margin-bottom: 0px;
+}
+
+.rcornersupper {
+  border-radius: 15px 15px 0px 0px;
+}
+
+.rcornerslower {
+  border-radius: 0px 0px 15px 15px;
+}
+
+ul,li {
+  margin-left: 3em;
+}
+
+p{
+  font-size: 20px;
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
+}
+
+@media screen and (max-width: 1000px) {
+  ul,li {
+    margin-left: 1em;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  h1{
+    font-size: 30px;
+  }
+  p{
+    font-size: 14px;
+  }
+  ul,li {
+    margin-left: 0em;
+    font-size: 14px;
+  }
+}
